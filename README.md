@@ -20,7 +20,8 @@ A quick walk through...
 ## Install
 
 Prerequisites:
- - [node v6](https://nodejs.org/en/)
+ - [node v6 minimum, v8.9 LTS recommended](https://nodejs.org/en/)
+   - MacOS note that installation via `brew` is not yet supported.
  - npm v5.6.0
    -  `npm i -g npm`
  - docsmith v0.6.0:
