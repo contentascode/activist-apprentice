@@ -28,7 +28,7 @@ install:
 
 script:
   - mkdir workspace && cd workspace
-  - apprentice init --defaults
+  - apprentice init --non-interactive
   # Build website
   - apprentice start --clean --no-watch --baseurl /activist-apprentice/@apprentice/preview
 
