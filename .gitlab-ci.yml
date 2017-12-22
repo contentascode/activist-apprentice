@@ -1,0 +1,54 @@
+stages:
+  - build
+  - pages
+
+build:
+
+  stage: build
+
+  services:
+    - docker:dind
+
+  image: docker:latest
+
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+
+  script:
+    # If this is built on the master branch (adapting the only key)
+    # master will be a mutable tag and I'd recommend instead switching to
+    # the CI_COMMIT_SHA or use SemVer Tags and only build images on tags pushes.
+    # If you don't care about the subtle problems this can create then just use latest.
+    - alias 'dockerize=git whatchanged HEAD^! | grep "Dockerfile\|package.json\|yarn.lock" >/dev/null'
+    - dockerize && docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+    - dockerize && docker build --cache-from $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG" .
+    - dockerize && docker push $CONTAINER_IMAGE:$CI_COMMIT_REF_SLUG
+    - dockerize || (echo "no need to build docker image" && exit 0)
+
+pages:
+
+  stage: pages
+
+  # See note above in the docker job about mutable tags. SemVer would be better
+  image: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+
+  cache:
+    paths:
+    - node_modules/
+
+  before_script:
+  - mkdir workspace && cd workspace
+  - apprentice init --non-interactive
+
+  script:
+  # Build website
+  - apprentice start --clean --no-watch --baseurl /activist-apprentice/@apprentice/preview
+  - cp -R $HOME/.content/build public
+  - ls -la public
+
+  artifacts:
+    paths:
+    - public
+
+  only:
+  - master
