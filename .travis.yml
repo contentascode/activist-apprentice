@@ -28,7 +28,8 @@ install:
 
 script:
   - mkdir workspace && cd workspace
-  - DEBUG=* apprentice init --non-interactive
+  - apprentice init --non-interactive
+  - apprentice config
   # Build website
   - apprentice start --clean --no-watch --baseurl /activist-apprentice/@apprentice/preview
 
