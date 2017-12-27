@@ -4,6 +4,6 @@
 #  - use of private registry.
 ---
 packages:
-  'activist-apprentice-course-template': activist-apprentice-course-template@^0.1
+  'activist-apprentice-course-template': activist-apprentice-course-template@^0.2
 templates:
-  'course': activist-apprentice-course-template@^0.1
+  'course': activist-apprentice-course-template@^0.2
