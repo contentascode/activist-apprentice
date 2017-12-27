@@ -1,6 +1,6 @@
 {
   "name": "activist-apprentice",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Activist Apprentice",
   "bin": {
     "apprentice": "../../../lib/node_modules/docsmith/lib/docsmith.js",
