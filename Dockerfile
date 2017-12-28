@@ -6,11 +6,11 @@ RUN rm -rf /var/lib/apt/lists/*
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-COPY package.json /usr/src/app/
-RUN yarn
-COPY . /usr/src/app
+RUN npm i -g npm
+RUN npm i -g docsmith@beta
 
-RUN yarn global add docsmith@beta
-RUN yarn global add
+COPY package.json /usr/src/app/
+RUN npm i -g
+COPY . /usr/src/app
 
 CMD ["apprentice", "config"]
