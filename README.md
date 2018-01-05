@@ -35,10 +35,6 @@ You can now install the CLI with:
 npm i -g activist-apprentice
 ```
 
-In order to open local urls with Atom by clicking the edit link in previews you need a handler for the `atm://` local url scheme:
- - OSX: https://github.com/WizardOfOgz/atom-handler
- - Linux: https://github.com/eclemens/atom-url-handler
-
 ## Usage
 
 ```
