@@ -62,6 +62,15 @@ The recommended text editor is Atom https://atom.io together with the following 
   - [linter-ui-default](https://atom.io/packages/linter-ui-default)
   - [linter-remark](https://atom.io/packages/linter-remark)
 
+## Structure
+
+This template is organised as follow.
+
+
+The markdown files respect the following guidelines:
+ - Use frontmatter only in special cases.
+ - Titles are automatically taken from
+
 ## Links
 
 - Related repositories
