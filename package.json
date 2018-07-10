@@ -11,6 +11,7 @@
     "apprentice-config": "../../../lib/node_modules/docsmith/lib/docsmith-config.js",
     "apprentice-link": "../../../lib/node_modules/docsmith/lib/docsmith-link.js",
     "apprentice-start": "../../../lib/node_modules/docsmith/lib/docsmith-start.js",
+    "apprentice-build": "../../../lib/node_modules/docsmith/lib/docsmith-build.js",
     "apprentice-pkgpath": "./package.json"
   },
   "scripts": {

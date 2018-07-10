@@ -19,21 +19,40 @@ A quick walk through...
 
 ## Install
 
-Prerequisites:
-  - [node v6 minimum, v8.9 LTS recommended](https://nodejs.org/en/)
-    - MacOS note that installation via `brew` is not yet supported.
+### Prerequisites:
 
-  - npm v5.6.0
-    - `npm i -g npm`
+- [node v6 minimum, v8.9 LTS recommended](https://nodejs.org/en/)
 
-  - docsmith v0.7.9:
-    - `npm i -g docsmith@beta`
+  - MacOS note that installation via `brew` is not yet supported.
 
-  - pandoc 1.19
-    - `brew install pandoc`
-    - `apt-get install pandoc`
+- npm v5.6.0
+
+  - `npm i -g npm`
+
+- docsmith v0.7.9:
+
+  - `npm i -g docsmith@beta`
+
+- pandoc 1.19
+  - `brew install pandoc`
+  - `apt-get install pandoc`
+
+### Prerequisites for APK build
+
+The following are only required if you wish to use the `apprentice build mobile` command which will generate an APK for your project.
+
+- exp v54.0.1:
+
+  - `npm i -g exp`
+
+- docker:
+  - https://docs.docker.com/docker-for-mac/install/
+  - make sure that you set Docker to minimum **8GB** memory (Docker icon > Preferences > Advanced).
+
+### Apprentice Command
 
 You can now install the CLI with:
+
 ```bash
 npm i -g activist-apprentice
 ```
@@ -57,19 +76,20 @@ This will start the preview server and watch your local files for changes. You c
 ## Editor
 
 The recommended text editor is Atom https://atom.io together with the following packages:
-  - [markdown-preview-enhanced](https://atom.io/packages/markdown-preview-enhanced)
-  - [linter](https://atom.io/packages/linter)
-  - [linter-ui-default](https://atom.io/packages/linter-ui-default)
-  - [linter-remark](https://atom.io/packages/linter-remark)
+
+- [markdown-preview-enhanced](https://atom.io/packages/markdown-preview-enhanced)
+- [linter](https://atom.io/packages/linter)
+- [linter-ui-default](https://atom.io/packages/linter-ui-default)
+- [linter-remark](https://atom.io/packages/linter-remark)
 
 ## Structure
 
 This template is organised as follow.
 
-
 The markdown files respect the following guidelines:
- - Use frontmatter only in special cases.
- - Titles are automatically taken from
+
+- Use frontmatter only in special cases.
+- Titles are automatically taken from
 
 ## Links
 
